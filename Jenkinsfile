@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKER_IMAGE = "2022bcd0017/wine-quality-api:latest"
-        CONTAINER_NAME = "hopeful_kepler"
+        CONTAINER_NAME = "Lightning_macqueen"
         API_PORT = "8030"
         API_BASE = "http://localhost:${API_PORT}"
         TIMEOUT_SECONDS = "30"
