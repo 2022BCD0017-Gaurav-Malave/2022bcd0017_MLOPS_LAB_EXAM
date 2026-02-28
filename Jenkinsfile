@@ -113,14 +113,14 @@ pipeline {
                     }
                     echo "HTTP status check passed (${httpStatus})"
 
-                    // Validation 2: Response must contain 'prediction' field
-                    if (!responseBody.contains("prediction")) {
-                        error("VALIDATION FAILED: Response does not contain 'prediction' field. Got: ${responseBody}")
+                    // Validation 2: Response must contain 'wine_quality' field
+                    if (!responseBody.contains("wine_quality")) {
+                        error("VALIDATION FAILED: Response does not contain 'wine_quality' field. Got: ${responseBody}")
                     }
-                    echo "'prediction' field exists in response"
+                    echo "'wine_quality' field exists in response"
 
                     // Validation 3: Prediction value must be numeric
-                    def predMatch = responseBody =~ /"prediction"\s*:\s*([\d.eE+\-]+)/
+                    def predMatch = responseBody =~ /"wine_quality"\s*:\s*([\d.eE+\-]+)/
                     if (!predMatch) {
                         error("VALIDATION FAILED: Prediction value is not numeric. Got: ${responseBody}")
                     }
