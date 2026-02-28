@@ -31,7 +31,7 @@ pipeline {
                 sh """
                     docker run -d \
                         --name ${CONTAINER_NAME} \
-                        -p ${API_PORT}:8000 \
+                        -p ${API_PORT}:8030 \
                         ${DOCKER_IMAGE}
                 """
                 echo "Container started successfully"
